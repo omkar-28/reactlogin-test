@@ -8,9 +8,10 @@ describe("Test the App Component", () => {
     const linkElement = component.getByText(/This is React Testing Tutorial/i);
     expect(linkElement).toBeInTheDocument();
   });
-  test("render login component in doucment", () => {
-    const { getByLabelText } = render(<App />);
-    const childElement = getByLabelText("Email");
-    expect(childElement).toBeTruthy();
-  });
+  
+  test("render child component in the document",()=>{
+    const component = render(<App />)
+    const childElement = component.getByLabelText("Email")
+    expect(childElement).toBeInTheDocument()
+  })
 });
